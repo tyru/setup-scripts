@@ -16,7 +16,7 @@ load_config() {
 get_daemon_pid() {
     pgrep "$progname"
 }
-is_starting() {
+is_running() {
     [ ! -z "`get_daemon_pid`" ]
 }
 
@@ -43,7 +43,7 @@ do_restart() {
     do_start
 }
 do_status() {
-    if is_starting; then
+    if is_running; then
         pid=`get_daemon_pid`
         echo "Running as pid $pid..."
     else
