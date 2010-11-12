@@ -1,0 +1,21 @@
+#!/bin/sh
+
+die() {
+    echo "$@" >&2
+    exit 1
+}
+
+git clone git://github.com/tyru/dotfiles.git
+cd dotfiles || die "can't chdir to 'dotfiles'.";
+
+git submodule update --init
+
+# Checkout HEAD branch.
+git submodule foreach 'git checkout master; true'
+(cd dotfiles/.vim/bundle/skk.vim && git checkout azik)
+
+git submodule foreach 'git pull origin master; true'
+
+# Create remote 'me', 'bare'.
+git submodule foreach 'git remote add me git@github.com:tyru/`basename $path`.git; true'
+git submodule foreach 'git remote add bare ~/git/+public/github/`basename $path`.git; true'
