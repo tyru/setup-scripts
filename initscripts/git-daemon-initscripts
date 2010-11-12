@@ -1,0 +1,44 @@
+#!/bin/sh
+
+path_config="/etc/git-daemon-daemon/config"
+
+usage() {
+    echo "service `basename $0` [start|stop|restart]" >&2
+    exit 1
+}
+load_config() {
+    [ -e "$path_config" ] && source "$path_config"
+}
+
+do_start() {
+    echo "Starting git-daemon-daemon..."
+    load_config
+    if [ -z "$GIT_DAEMON_DAEMON_BASE_PATH" ]; then
+        base_path=
+    else
+        base_path="--base-path=$GIT_DAEMON_DAEMON_BASE_PATH"
+    fi
+    git daemon \
+        --export-all \
+        $base_path \
+        >/dev/null 2>&1 &
+}
+do_stop() {
+    echo "Stopping git-daemon-daemon..."
+    killall -q git-daemon-daemon
+}
+do_restart() {
+    echo "Restarting git-daemon-daemon..."
+    do_stop
+    do_start
+}
+
+
+case "$1" in
+    start|stop|restart)
+    do_$1
+    ;;
+    *)
+    usage
+    ;;
+esac
