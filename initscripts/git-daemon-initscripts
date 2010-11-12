@@ -3,11 +3,17 @@
 path_config="/etc/git-daemon-daemon/config"
 
 usage() {
-    echo "service `basename $0` [start|stop|restart]" >&2
+    echo "service `basename $0` [start|stop|restart|status]" >&2
     exit 1
 }
 load_config() {
     [ -e "$path_config" ] && source "$path_config"
+}
+get_daemon_pid() {
+    pgrep git-daemon-daemon
+}
+is_starting() {
+    [ ! -z "`get_daemon_pid`" ]
 }
 
 do_start() {
@@ -32,10 +38,18 @@ do_restart() {
     do_stop
     do_start
 }
+do_status() {
+    if is_starting; then
+        pid=`get_daemon_pid`
+        echo "Running as pid $pid..."
+    else
+        echo "Not running."
+    fi
+}
 
 
 case "$1" in
-    start|stop|restart)
+    start|stop|restart|status)
     do_$1
     ;;
     *)
