@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# FIXME: get_daemon_pid can't get correct pid.
+# because "status" do not work.
+
 progname="`basename $0`"
 path_config="/etc/$progname/config"
 
@@ -32,7 +35,7 @@ do_start() {
 }
 do_stop() {
     echo "Stopping $progname..."
-    killall -q "$progname"
+    pkill "$progname"
 }
 do_restart() {
     echo "Restarting $progname..."
