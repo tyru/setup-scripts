@@ -8,7 +8,7 @@ usage() {
     exit 1
 }
 load_config() {
-    [ -e "$path_config" ] && source "$path_config"
+    [ -e "$path_config" ] && . "$path_config"
 }
 get_daemon_pid() {
     pgrep $progname
