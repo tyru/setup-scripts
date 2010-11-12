@@ -1,23 +1,24 @@
 #!/bin/sh
 
-path_config="/etc/git-daemon-daemon/config"
+progname="`basename $0`"
+path_config="/etc/$progname/config"
 
 usage() {
-    echo "service `basename $0` [start|stop|restart|status]" >&2
+    echo "service $progname [start|stop|restart|status]" >&2
     exit 1
 }
 load_config() {
     [ -e "$path_config" ] && source "$path_config"
 }
 get_daemon_pid() {
-    pgrep git-daemon-daemon
+    pgrep $progname
 }
 is_starting() {
     [ ! -z "`get_daemon_pid`" ]
 }
 
 do_start() {
-    echo "Starting git-daemon-daemon..."
+    echo "Starting $progname..."
     load_config
     if [ -z "$GIT_DAEMON_DAEMON_BASE_PATH" ]; then
         base_path=
@@ -30,11 +31,11 @@ do_start() {
         >/dev/null 2>&1 &
 }
 do_stop() {
-    echo "Stopping git-daemon-daemon..."
-    killall -q git-daemon-daemon
+    echo "Stopping $progname..."
+    killall -q $progname
 }
 do_restart() {
-    echo "Restarting git-daemon-daemon..."
+    echo "Restarting $progname..."
     do_stop
     do_start
 }
