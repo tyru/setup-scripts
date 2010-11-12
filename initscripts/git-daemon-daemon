@@ -11,7 +11,7 @@ load_config() {
     [ -e "$path_config" ] && . "$path_config"
 }
 get_daemon_pid() {
-    pgrep $progname
+    pgrep "$progname"
 }
 is_starting() {
     [ ! -z "`get_daemon_pid`" ]
@@ -32,7 +32,7 @@ do_start() {
 }
 do_stop() {
     echo "Stopping $progname..."
-    killall -q $progname
+    killall -q "$progname"
 }
 do_restart() {
     echo "Restarting $progname..."
