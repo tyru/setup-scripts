@@ -7,6 +7,11 @@
     $ cd ~/git
     $ /path/to/git-clone-dotfiles
 
+## git-clone-github-repos
+
+    # Mirror all github repos to ~/git/github, ~/git/+public/github
+    $ /path/to/git-clone-github-repos
+
 ## mirror-all-github-repos
 
     # Mirror all github repos.
