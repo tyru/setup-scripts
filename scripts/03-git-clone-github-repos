@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Be careful, this must not work well
+# even if there was already setup repo.
+
+
+# Assumption: this skips 'dotfiles' because it already exists.
+gh all        --git tyru --into ~/git
+
+# For git-daemon server.
+mkdir -p ~/git/+public
+gh all --bare --git tyru --into ~/git/+public/github

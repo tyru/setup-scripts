@@ -3,11 +3,17 @@
 # Be careful, this must not work well
 # even if there was already setup repo.
 
+# Clone dotfiles under this directory.
+DIR="$HOME/git"
+
 die() {
     echo "$@" >&2
     exit 1
 }
 
+
+mkdir -p $DIR
+cd $DIR || die "can't chdir to '$DIR'."
 
 if [ -d dotfiles ]; then
     cd dotfiles || die "can't chdir to 'dotfiles'."
