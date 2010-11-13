@@ -11,7 +11,7 @@ die() {
 
 cd || die "can't chdir to home directory."
 
-[ -d Dropbox ] && ln -s Dropbox/memo memo
+[ ! -e memo ] && ln -s Dropbox/memo memo
 
 mkdir -p vcs/git vcs/hg vcs/svn vcs/darcs
 [ ! -e git ] && ln -s vcs/git git
@@ -23,4 +23,4 @@ mkdir -p tmp/build tmp/down tmp/trash/samba
 [ ! -e build ] && ln -s tmp/build build
 [ ! -e down ] && ln -s tmp/down down
 
-[ -d git/hatenadiary-tyru ] && ln -s git/hatenadiary-tyru diary
+[ ! -e diary ] && ln -s git/hatenadiary-tyru diary
