@@ -5,4 +5,4 @@ die() {
     exit 1
 }
 
-gh all --git --bare tyru --into github
+gh all --git --bare -s tyru --into github
