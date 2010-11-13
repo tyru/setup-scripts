@@ -14,13 +14,13 @@ cd || die "can't chdir to home directory."
 [ -d Dropbox ] && ln -s Dropbox/memo memo
 
 mkdir -p vcs/git vcs/hg vcs/svn vcs/darcs
-ln -s vcs/git git
-ln -s vcs/hg hg
-ln -s vcs/svn svn
-ln -s vcs/darcs darcs
+[ ! -e git ] && ln -s vcs/git git
+[ ! -e hg ] && ln -s vcs/hg hg
+[ ! -e svn ] && ln -s vcs/svn svn
+[ ! -e darcs ] && ln -s vcs/darcs darcs
 
 mkdir -p tmp/build tmp/down tmp/trash/samba
-ln -s tmp/build build
-ln -s tmp/down down
+[ ! -e build ] && ln -s tmp/build build
+[ ! -e down ] && ln -s tmp/down down
 
 [ -d git/hatenadiary-tyru ] && ln -s git/hatenadiary-tyru diary
