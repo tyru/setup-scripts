@@ -6,7 +6,7 @@ die() {
 }
 
 if [ $# -ne 0 -a "$1" = '--bare' ]; then
-    gh all --bare --git -s tyru --into github
+    gh all --bare --git tyru --into github
 else
-    gh all        --git -s tyru --into github
+    gh all        --git tyru --into github
 fi
