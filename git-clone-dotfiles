@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Be careful, this must not work well
+# even if there was already setup repo.
+
 die() {
     echo "$@" >&2
     exit 1
