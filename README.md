@@ -11,4 +11,6 @@
 
     # Mirror all github repos.
     $ cd ~/git/+public
+    $ /path/to/mirror-all-github-repos --bare
+    # or
     $ /path/to/mirror-all-github-repos

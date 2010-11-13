@@ -5,4 +5,8 @@ die() {
     exit 1
 }
 
-gh all --git --bare -s tyru --into github
+if [ $# -ne 0 -a "$1" = '--bare' ]; then
+    gh all --bare --git -s tyru --into github
+else
+    gh all        --git -s tyru --into github
+fi
