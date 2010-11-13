@@ -14,7 +14,7 @@ load_config() {
     [ -e "$path_config" ] && . "$path_config"
 }
 get_daemon_pid() {
-    pgrep "$progname"
+    pgrep git-daemon | head -1
 }
 is_running() {
     [ ! -z "`get_daemon_pid`" ]
@@ -35,7 +35,7 @@ do_start() {
 }
 do_stop() {
     echo "Stopping $progname..."
-    pkill "$progname"
+    is_running && kill `get_daemon_pid`
 }
 do_restart() {
     echo "Restarting $progname..."
