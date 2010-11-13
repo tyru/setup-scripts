@@ -1,13 +1,13 @@
 #!/bin/sh
 
+SCRIPTS_DIR="$(cd $(dirname $0) && pwd)"
+GIT_CLONE_DOTFILES="$SCRIPTS_DIR/git-clone-dotfiles"
+MIRROR_ALL_GITHUB_REPOS="$SCRIPTS_DIR/mirror-all-github-repos"
+
 die() {
     echo "$@" >&2
     exit 1
 }
-
-SCRIPTS_DIR="$(cd $(dirname $0) && pwd)"
-GIT_CLONE_DOTFILES="$SCRIPTS_DIR/git-clone-dotfiles"
-MIRROR_ALL_GITHUB_REPOS="$SCRIPTS_DIR/mirror-all-github-repos"
 
 # Clone dotfiles
 mkdir -p ~/git/github
