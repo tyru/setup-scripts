@@ -1,5 +1,10 @@
 
 # SYNOPSIS
+## setup
+
+    # Let's set up my environment.
+    $ /path/to/setup
+
 ## git-clone-dotfiles
 
     # git-clone git://github.com/tyru/dotfiles.git

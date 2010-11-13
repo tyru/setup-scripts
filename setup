@@ -1,0 +1,7 @@
+#!/bin/sh
+
+SCRIPTS_DIR="$(cd $(dirname $0) && pwd)"
+GIT_CLONE_GITHUB_REPOS="$SCRIPTS_DIR/git-clone-github-repos"
+
+
+$GIT_CLONE_GITHUB_REPOS
