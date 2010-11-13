@@ -22,3 +22,5 @@ ln -s vcs/darcs darcs
 mkdir -p tmp/build tmp/down tmp/trash/samba
 ln -s tmp/build build
 ln -s tmp/down down
+
+[ -d git/hatenadiary-tyru ] && ln -s git/hatenadiary-tyru diary
