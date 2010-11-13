@@ -5,6 +5,11 @@ die() {
     exit 1
 }
 
+
+if [ -e dotfiles ]; then
+    die "error: already exists 'dotfiles' directory."
+fi
+
 git clone git://github.com/tyru/dotfiles.git
 cd dotfiles || die "can't chdir to 'dotfiles'.";
 
