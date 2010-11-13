@@ -22,6 +22,7 @@ git submodule update --init
 
 # Checkout HEAD branch.
 git submodule foreach 'git checkout master; true'
+# TODO: This will be changed in near future.
 (cd dotfiles/.vim/bundle/skk.vim && git checkout azik)
 
 git submodule foreach 'git pull origin master; true'
