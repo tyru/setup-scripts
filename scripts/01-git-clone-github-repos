@@ -4,8 +4,8 @@
 # even if there was already setup repo.
 
 SCRIPTS_DIR="$(cd $(dirname $0) && pwd)"
-GIT_CLONE_DOTFILES="$SCRIPTS_DIR/git-clone-dotfiles"
-MIRROR_ALL_GITHUB_REPOS="$SCRIPTS_DIR/mirror-all-github-repos"
+GIT_CLONE_DOTFILES="$SCRIPTS_DIR/ext/git-clone-dotfiles"
+MIRROR_ALL_GITHUB_REPOS="$SCRIPTS_DIR/ext/mirror-all-github-repos"
 
 die() {
     echo "$@" >&2
