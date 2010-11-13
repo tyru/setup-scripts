@@ -6,8 +6,10 @@ die() {
 }
 
 
-if [ -e dotfiles ]; then
-    die "error: already exists 'dotfiles' directory."
+if [ -d dotfiles ]; then
+    cd dotfiles || die "can't chdir to 'dotfiles'."
+    git pull origin master
+    exit $?
 fi
 
 git clone git://github.com/tyru/dotfiles.git
