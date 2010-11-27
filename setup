@@ -3,5 +3,5 @@
 dir="`dirname $0`"
 cd "$dir" || die "can't chdir to '$dir'."
 
-(cd common 2>/dev/null && ./setup)
-(cd user   2>/dev/null && ./setup)
+([ -f common/setup ] && cd common 2>/dev/null && ./setup)
+([ -f user/setup   ] && cd user   2>/dev/null && ./setup)
