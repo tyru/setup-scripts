@@ -2,6 +2,13 @@
 
 
 doit() {
+    # local
+    for i in perl5 perlbrew; do
+        if [ ! -e $i ]; then
+            mkdir -p local/$i
+        fi
+    done
+
     # vcs
     for i in git hg svn darcs; do
         if [ ! -e $i ]; then
