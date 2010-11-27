@@ -1,5 +1,6 @@
 #!/bin/sh
 
+./local-lib
 ./symlinks
 ./git-clone-dotfiles
 ./git-clone-github-repos

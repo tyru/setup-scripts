@@ -1,0 +1,17 @@
+#!/bin/sh
+
+local_lib_installed() {
+    perldoc -l local::lib >/dev/null 2>&1
+}
+
+if ! local_lib_installed; then
+    # http://blog.hide-k.net/archives/2009/02/locallibrootcpa.php
+    wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.003001.tar.gz
+    tar xzvf local-lib-1.003001.tar.gz
+    cd local-lib-1.003001
+    perl Makefile.PL
+    make
+    make test && make install
+    cd ..
+    rm -rf local-lib-1.003001 local-lib-1.003001.tar.gz
+fi
