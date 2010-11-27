@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cpan_outdated_installed() {
+    perldoc -l App::cpanoutdated >/dev/null 2>&1
+}
+
+if ! cpan_outdated_installed; then
+    cpanm App::cpanoutdated
+fi

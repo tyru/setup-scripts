@@ -2,6 +2,7 @@
 
 ./local-lib
 ./cpanminus
+./cpan-outdated
 ./symlinks
 ./git-clone-dotfiles
 ./git-clone-github-repos
