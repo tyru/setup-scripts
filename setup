@@ -2,5 +2,7 @@
 
 dir="`dirname $0`"
 cd "$dir" || die "can't chdir to '$dir'."
-# These scripts are supposed to run as another process.
-find ./scripts -maxdepth 1 -mindepth 1 -type f -perm -100 -exec {} \;
+
+./scripts/symlinks
+./scripts/git-clone-dotfiles
+./scripts/git-clone-github-repos

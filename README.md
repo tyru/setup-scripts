@@ -9,12 +9,12 @@ Let's set up my environment.
 but if it exists, `setup` will *update* environment.
 This means it can be safe even if I register to cron.
 
-## 01-symlinks
+## symlinks
 Create symlinks.
 
-## 02-git-clone-dotfiles
+## git-clone-dotfiles
 git-clone `git://github.com/tyru/dotfiles.git`
 and set up misc. info.
 
-## 03-git-clone-github-repos
+## git-clone-github-repos
 Mirror all github repos to `~/git/github`, `~/git/+public/github`.
