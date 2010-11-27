@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cpanminus_installed() {
+    perldoc -l App::cpanminus >/dev/null 2>&1
+}
+
+if ! cpanminus_installed; then
+    wget http://xrl.us/cpanm || exit $?
+    chmod +x cpanm
+    ./cpanm --self-upgrade
+    rm cpanm
+fi

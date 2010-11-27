@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ./local-lib
+./cpanminus
 ./symlinks
 ./git-clone-dotfiles
 ./git-clone-github-repos
