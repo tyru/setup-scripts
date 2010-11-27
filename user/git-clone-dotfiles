@@ -3,23 +3,26 @@
 # Be careful, this must not work well
 # even if there was already setup repo.
 
+DIR="$HOME/git"
+DOTFILES="dotfiles"
+
 die() {
     echo "$@" >&2
     exit 1
 }
 
 
-cd $HOME/git || die "can't chdir to '$DIR'."
+cd "$DIR" || die "can't chdir to '$DIR'."
 
-if [ -d dotfiles ]; then
+if [ -d "$DOTFILES" ]; then
     # Update only.
-    cd dotfiles || die "can't chdir to 'dotfiles'."
+    cd "$DOTFILES" || die "can't chdir to '$DOTFILES'."
     git pull origin master
     exit $?
 fi
 
-git clone git://github.com/tyru/dotfiles.git
-cd dotfiles || die "can't chdir to 'dotfiles'.";
+git clone git://github.com/tyru/dotfiles.git $DOTFILES
+cd "$DOTFILES" || die "can't chdir to '$DOTFILES'.";
 
 git submodule update --init
 
