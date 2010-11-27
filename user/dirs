@@ -1,0 +1,27 @@
+#!/bin/sh
+
+
+doit() {
+    # vcs
+    for i in git hg svn darcs; do
+        if [ ! -e $i ]; then
+            mkdir -p vcs/$i
+            ln -s vcs/$i $i
+        fi
+    done
+
+    # tmp
+    for i in build down; do
+        if [ ! -e $i ]; then
+            mkdir -p tmp/$i
+            ln -s tmp/$i $i
+        fi
+    done
+
+    # memo
+    [ ! -e memo ] && [ -e Dropbox ] && ln -s Dropbox/memo memo
+
+    # diary
+    [ ! -e diary ] && [ -e git/hatenadiary-tyru ] && ln -s git/hatenadiary-tyru diary
+}
+(cd && doit)
