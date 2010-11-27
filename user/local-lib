@@ -9,7 +9,7 @@ if ! local_lib_installed; then
     wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.003001.tar.gz
     tar xzvf local-lib-1.003001.tar.gz
     cd local-lib-1.003001
-    perl Makefile.PL
+    perl Makefile.PL --bootstrap=$HOME/local/perl5
     make
     make test && make install
     cd ..
