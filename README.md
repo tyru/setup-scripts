@@ -5,9 +5,9 @@ Let's set up my environment.
 
     $ /path/to/setup
 
-`setup` will *set up* new environment if it doesn't exist.
-but if it exists, `setup` will *update* environment.
-This means it can be safe even if I register to cron.
+`setup` will set up new environment *if it doesn't exist*.
+but *if it exists*, `setup` will *update* environment.
+This means it can be safe even if I add it to cron jobs.
 
 ## symlinks
 Create symlinks.
