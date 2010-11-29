@@ -1,0 +1,9 @@
+#!/bin/sh
+
+app_gh_installed() {
+    perldoc -l App::gh >/dev/null 2>&1
+}
+
+if ! app_gh_installed; then
+    cpanm App::gh
+fi
