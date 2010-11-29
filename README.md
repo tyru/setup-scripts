@@ -9,6 +9,17 @@ Let's set up my environment.
 but *if it exists*, `setup` will *update* environment.
 This means it can be safe even if I add it to cron jobs.
 
+
+# DIRECTORIES
+## local-lib
+Install local::lib.
+
+## cpanminus
+Install cpanminus.
+
+## cpan-outdated
+Install cpan-outdated.
+
 ## symlinks
 Create symlinks.
 
