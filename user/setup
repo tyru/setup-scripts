@@ -1,8 +1,9 @@
 #!/bin/sh
 
-./local-lib
-./cpanminus
-./cpan-outdated
+./install-local-lib
+./install-cpanminus
+./install-cpan-outdated
+./install-app-gh
 ./dirs
 ./git-clone-dotfiles
 ./git-clone-github-repos
