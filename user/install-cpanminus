@@ -5,7 +5,7 @@ cpanminus_installed() {
 }
 
 if ! cpanminus_installed; then
-    wget http://xrl.us/cpanm || exit $?
+    wget --no-check-certificate http://xrl.us/cpanm || exit $?
     chmod +x cpanm
     ./cpanm --self-upgrade
     rm cpanm

@@ -6,7 +6,7 @@ local_lib_installed() {
 
 if ! local_lib_installed; then
     # http://blog.hide-k.net/archives/2009/02/locallibrootcpa.php
-    wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.003001.tar.gz
+    wget --no-check-certificate http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.003001.tar.gz
     tar xzvf local-lib-1.003001.tar.gz
     cd local-lib-1.003001
     perl Makefile.PL --bootstrap=$HOME/local/perl5
