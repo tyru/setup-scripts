@@ -3,4 +3,4 @@
 dir="`dirname $0`"
 cd "$dir" || die "can't chdir to '$dir'."
 
-(cd user 2>/dev/null && ./setup)
+(cd scripts 2>/dev/null && ./setup)
