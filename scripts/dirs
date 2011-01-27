@@ -18,9 +18,12 @@ doit() {
     done
 
     # tmp
-    mkdir -p tmp
-    mkdir -p trash/samba
-    mkdir -p down
+    for i in down trash/samba build; do
+        if [ ! -e $i ]; then
+            mkdir -p tmp/$i
+            ln -s tmp/$i $i
+        fi
+    done
 
     # make symlinks from (to?) Dropbox
     if [ -e Dropbox ]; then
