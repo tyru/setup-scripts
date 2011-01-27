@@ -18,12 +18,9 @@ doit() {
     done
 
     # tmp
-    for i in build down; do
-        if [ ! -e $i ]; then
-            mkdir -p tmp/$i
-            ln -s tmp/$i $i
-        fi
-    done
+    mkdir -p tmp
+    mkdir -p trash/samba
+    mkdir -p down
 
     # memo
     [ ! -e memo ] && [ -e Dropbox ] && ln -s Dropbox/memo memo
