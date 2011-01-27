@@ -22,10 +22,11 @@ doit() {
     mkdir -p trash/samba
     mkdir -p down
 
-    # memo
-    [ ! -e memo ] && [ -e Dropbox ] && ln -s Dropbox/memo memo
-
-    # diary
-    [ ! -e diary ] && [ -e git/hatenadiary-tyru ] && ln -s git/hatenadiary-tyru diary
+    # make symlinks from (to?) Dropbox
+    if [ -e Dropbox ]; then
+        for i in scratch memo diary; do
+            [ ! -e "$i" ] && ln -s Dropbox/$i $i
+        done
+    fi
 }
 (cd && doit)
