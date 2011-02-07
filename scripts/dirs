@@ -31,7 +31,7 @@ doit() {
             [ ! -e "$i" ] && ln -s Dropbox/$i $i
         done
         if [ -d git/tyru.github.com -a -d site ]; then
-            ln -s git/tyru.github.com site/
+            ln -s git/tyru.github.com site/tyru.github.com
         fi
     fi
 }
