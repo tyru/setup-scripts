@@ -3,10 +3,6 @@
 # Be careful, this must work well
 # even if there was already setup repo.
 
-EXCLUDE_REPOS="--exclude dotto --exclude DumbBuf.vim --exclude caw.vim --exclude current-func-info.vim --exclude detect-coding-style.vim --exclude dutil.vim --exclude emap.vim --exclude eskk.vim --exclude feature_list_excomplete.vim --exclude gist-vim --exclude grass.vim --exclude kirikiri.vim --exclude lingr-vim --exclude multiprocessing.vim --exclude neocomplcache --exclude nextfile.vim --exclude ohmygrep.vim --exclude open-browser.vim --exclude operator-camelize.vim --exclude operator-html-escape.vim --exclude operator-reverse.vim --exclude parse_args.vim --exclude prompt.vim --exclude quickey.vim --exclude regbuf.vim --exclude restart.vim --exclude savemap.vim --exclude sign-diff.vim --exclude simpletap.vim --exclude skk.vim --exclude stickykey.vim --exclude syslib.vim --exclude tjs.vim --exclude undoclosewin.vim --exclude unite-help --exclude unite-tags --exclude unite.vim --exclude urilib.vim --exclude vim-altercmd --exclude vim-arpeggio --exclude vim-fakeclip --exclude vim-ft-diff_fold --exclude vim-ft-markdown_fold --exclude vim-github --exclude vim-metarw --exclude vim-metarw-git --exclude vim-narrow --exclude vim-operator-replace --exclude vim-operator-user --exclude vim-prettyprint --exclude vim-quickrun --exclude vim-ref --exclude vim-repeat --exclude vim-submode --exclude vim-surround --exclude vim-textobj-between --exclude vim-textobj-entire --exclude vim-textobj-fold --exclude vim-textobj-function --exclude vim-textobj-function-javascript --exclude vim-textobj-function-perl --exclude vim-textobj-indent --exclude vim-textobj-jabraces --exclude vim-textobj-lastpat --exclude vim-textobj-lastpat --exclude vim-textobj-syntax --exclude vim-textobj-user --exclude vim-visualstar --exclude vimfiler --exclude vimproc --exclude vimshell --exclude vimtemplate.vim --exclude winmove.vim"
-
-# Assumption: this skips 'dotfiles' because it already exists.
-gh all        --git tyru --into ~/git $EXCLUDE_REPOS
 
 # For git-daemon server.
 mkdir -p ~/git/+public
