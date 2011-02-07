@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Be careful, this must not work well
+# Be careful, this must work well
 # even if there was already setup repo.
 
 DIR="$HOME/git"
