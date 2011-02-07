@@ -3,4 +3,15 @@
 dir="`dirname $0`"
 cd "$dir" || die "can't chdir to '$dir'."
 
-(cd scripts 2>/dev/null && ./setup)
+
+# Run setup() as another process.
+setup() {
+    ./install-local-lib
+    ./install-cpanminus
+    ./install-cpan-outdated
+    ./install-app-gh
+    ./dirs
+    ./git-clone-dotfiles
+    ./git-clone-github-repos
+}
+(cd scripts 2>/dev/null && setup)
