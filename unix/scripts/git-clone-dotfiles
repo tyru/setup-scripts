@@ -18,6 +18,9 @@ if [ -d "$DOTFILES" ]; then
     # Update only.
     cd "$DOTFILES" || die "can't chdir to '$DOTFILES'."
     git pull origin master
+    x=$?
+    which git-subup && git subup
+    [ "$x" -eq 0 -a $? -eq 0 ]
     exit $?
 fi
 
