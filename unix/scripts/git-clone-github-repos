@@ -6,4 +6,4 @@
 
 # For git-daemon server.
 mkdir -p ~/git/+public
-gh all --bare --git tyru --into ~/git/+public/github
+gh all --mirror --git tyru --into ~/git/+public/github
