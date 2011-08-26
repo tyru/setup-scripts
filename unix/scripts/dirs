@@ -4,14 +4,14 @@
 doit() {
     # local
     for i in perl5 perlbrew; do
-        if [ ! -e $i ]; then
+        if [ ! -e local/$i ]; then
             mkdir -p local/$i
         fi
     done
 
     # vcs
     for i in git hg svn darcs; do
-        if [ ! -e $i ]; then
+        if [ ! -e vcs/$i ]; then
             mkdir -p vcs/$i
             ln -s vcs/$i $i
         fi
@@ -19,7 +19,7 @@ doit() {
 
     # tmp
     for i in down trash/samba build; do
-        if [ ! -e $i ]; then
+        if [ ! -e tmp/$i ]; then
             mkdir -p tmp/$i
             ln -s tmp/$i $i
         fi
