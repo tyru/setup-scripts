@@ -27,12 +27,9 @@ doit() {
 
     # make symlinks from (to?) Dropbox
     if [ -e Dropbox ]; then
-        for i in scratch memo diary site; do
-            [ ! -e "$i" ] && ln -s Dropbox/$i $i
+        for i in memo diary; do
+            [ -e Dropbox/$i -a ! -L $i ] && ln -s Dropbox/$i $i
         done
-        if [ -d git/tyru.github.com -a ! -L site/tyru.github.com ]; then
-            ln -s git/tyru.github.com site/tyru.github.com
-        fi
     fi
 }
 (cd && doit)
