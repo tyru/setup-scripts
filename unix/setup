@@ -10,7 +10,6 @@ setup() {
     ./install-cpanminus
     ./install-cpan-outdated
     ./install-app-gh
-    ./dirs
     ./git-clone-dotfiles
     ./git-clone-github-repos
 }
